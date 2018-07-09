@@ -1,0 +1,16 @@
+{
+    "name": "alamin/composer-play",
+    "authors": [
+        {
+            "name": "MD AL",
+            "email": "aaryan@w3engineers.com"
+        }
+    ],
+    "scripts": {
+        "phpinfo": "php -v"
+    },
+    
+    "require": {
+        "vlucas/phpdotenv": "^2.4"
+    }
+}

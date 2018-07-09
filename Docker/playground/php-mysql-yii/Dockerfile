@@ -1,0 +1,6 @@
+FROM php:5.6-apache
+RUN docker-php-ext-install pdo pdo_mysql
+RUN a2enmod rewrite
+RUN usermod -u 1000 www-data
+RUN usermod -G staff www-data
+RUN chmod -R 777 /var/www/html/

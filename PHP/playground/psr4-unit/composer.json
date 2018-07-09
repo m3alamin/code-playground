@@ -1,0 +1,21 @@
+{
+    "name": "alamin/psr4-unit",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MD AL",
+            "email": "aaryan@w3engineers.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Wthree\\": "app/Wthree",
+            "Test\\": "tests"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    }
+}

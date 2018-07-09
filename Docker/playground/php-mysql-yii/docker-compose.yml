@@ -1,0 +1,36 @@
+version: '2'
+
+services:
+  webserver:
+    build: ./
+    image: teetimes.net
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/www/html/DockerProjects/teetimes/teetimes_html/main-site:/var/www/html
+    links:
+      - db
+    environment:
+      - VIRTUAL_HOST=local.teetimes.net  
+
+  db:
+    image: mysql:5.6
+    ports: 
+      - "3306:3306"
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=111111
+      - MYSQL_DATABASE=golf_system
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+     - PMA_ARBITRARY=1
+    restart: always
+    ports:
+     - 8080:80
+    volumes:
+     - /sessions    

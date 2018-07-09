@@ -1,0 +1,22 @@
+{
+    "name": "alamin/calculator",
+    "description": "a very tiny calculator",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aaryan Ahmed",
+            "email": "aaryan@w3engineers.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "classmap": [
+            "app"
+        ]
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    }
+}

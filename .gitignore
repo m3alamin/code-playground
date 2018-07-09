@@ -5,3 +5,4 @@ ignore
 venv
 env
 __pycache__
+vendor
