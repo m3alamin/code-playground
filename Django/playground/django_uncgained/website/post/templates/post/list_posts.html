@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>List posts</h1>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <a href="{% url 'show_post' id=post.id %}" title="{{ post.title }}">{{ post.title }}</a>
+            <a href="{% url 'edit_post' id=post.id %}" title="Edit"> Edit</a>
+            <div>
+                <form method="POST" action="{% url 'delete_post' id=post.id %}">
+                    {% csrf_token %}
+                    {{ delete_form }}
+                    <input type="submit" value="Delete" />
+                </form>
+            </div>
+            <hr/>
+        </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
