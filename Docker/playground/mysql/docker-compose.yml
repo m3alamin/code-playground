@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+   db:
+     image: mysql:5.6
+     volumes:
+       - /home/alamin/Documents/DockerPlayground/mysql/data:/var/lib/mysql
+     restart: always
+     container_name: mysql56
+     environment:
+       MYSQL_ROOT_PASSWORD: 111111
+     ports:
+        - "3307:3306"
+

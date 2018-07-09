@@ -1,0 +1,29 @@
+{
+  "name": "JavaScriptSession",
+  "version": "1.0.0",
+  "description": "- [x] Hostory\r   - [x] History and Evolution\r - [x] JIT compiler\r   - [x] How JIT works in our browser and computer\r - [x] Data Type\r   - [x] Primitive Data\r   - [x] Variables, Constants & Assignment\r - [x] Operation\r - [x] Conditional Expression\r - [x] Scope\r   - [x] Global\r   - [x] Local\r - [x] Array\r   - [x] UNSHIFT SHIFT PUSH POP\r   - [x] SPLICE\r - [x] Object\r - [x] Hoisting\r - [x] BODMAS\r - [x] Function\r   - [x] Regular Function\r   - [x] Arrow function\r - [x] Constructors\r - [x] Constructors with Prototype\r - [x] Rest operator\r - [x] Promise\r - [x] Closures\r - [x] Loop\r   - [x] forEach\r   - [x] map\r - [x] The END",
+  "main": "script.js",
+  "scripts": {
+    "build": "webpack --mode development",
+    "watch": "webpack --mode development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m3alamin/JavaScriptSession.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m3alamin/JavaScriptSession/issues"
+  },
+  "homepage": "https://github.com/m3alamin/JavaScriptSession#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.3",
+    "babel-plugin-transform-es2015-spread": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "webpack": "^4.1.0",
+    "webpack-cli": "^2.0.10"
+  }
+}
