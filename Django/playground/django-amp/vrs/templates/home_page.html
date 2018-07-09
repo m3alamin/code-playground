@@ -1,0 +1,491 @@
+<!doctype html>
+<html ⚡>
+    <head>
+        <meta charset="utf-8">
+        <title> Hello World</title>
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+        <link rel="canonical" href="https://ampbyexample.com/introduction/hello_world/">
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+        <style amp-custom>
+            .navbar-trigger,
+            body {
+                color: var(--app-black-color)
+            }
+
+            .input-box,
+            .search-input,
+            body {
+                font-family: 'Open Sans', sans-serif;
+            }
+
+            :root {
+                --app-white-color: #ffffff;
+                --app-primary-color: #202020;
+                --app-blue-color: #159be1;
+                --app-black-color: #000000;
+                --app-orange-color: #f1a813;
+                --dark-grey: #555555;
+                --light-gray-second: #d3d3d3;
+                --gray-color-medium: #e7e7e7
+            }
+
+            main {
+                margin: 58px auto 0
+            }
+
+            .app-headerbar {
+                right: 0;
+                position: fixed;
+                left: 0;
+                top: 0;
+                z-index: 1;
+                background-color: var(--app-white-color);
+                min-height: 25px;
+                padding: 7px 15px
+            }
+
+            .flex-container {
+                display: flex
+            }
+
+            .flex1 {
+                flex: 1
+            }
+
+            .navbar-trigger {
+                font-size: 32px;
+                width: 35px;
+                outline: 0;
+            }
+
+            .header-logo {
+                border: 0
+            }
+
+            .main-logo img {
+                width: 100px;
+                height: 100px
+            }
+
+            .footer-bottom {
+                background-color: #333;
+                padding: 40px 15px;
+                color: #777;
+                text-align: center
+            }
+
+            .footer-copy-right a {
+                text-decoration: none;
+                color: #fff
+            }
+
+            .logo-tagline {
+                font-size: 10px;
+                height: 14px;
+                overflow: hidden;
+                margin: -6px 0 0 22px;
+                font-style: italic;
+                color: #777;
+                font-weight: 500
+            }
+
+            .home-banner-wrap {
+                width: 100%;
+                min-height: 345px;
+                background: url(images/bg-homepage.jpg) center top no-repeat;
+                background-size: cover;
+                padding-top: 70px;
+                text-align: center;
+                position: relative
+            }
+
+            .banner-form {
+                padding: 0 30px;
+            }
+            .searchbox-wrapper{
+                position: relative;
+            }
+
+            .input-box {
+                width: 94%;
+                font-size: 16px;
+                border: 0;
+                border-radius: 0;
+                color: #666;
+                padding: 0 3%;
+                margin-bottom: 5px;
+                min-height: 60px;
+            }
+            .auto-search-text {
+                width: 100%;
+                min-height: 60px;
+                font-size: 16px;
+                border: 0;
+                border-radius: 0;
+                color: #666;
+                padding: 15px 10px;
+                margin-bottom: 5px;
+                font-family: 'Open Sans', sans-serif;
+            }
+
+            .subscribe-button {
+                background-color: #f36d45;
+                background-image: url(images/spritesheet.png);
+                background-position: center -270px;
+                background-repeat: no-repeat;
+                border: 0;
+                color: #fff;
+                font-size: 24px;
+                height: 60px;
+                width: 100%;
+                border-radius: 0
+            }
+
+            .calender-check-in-bg,
+            .calender-check-out-bg {
+                background-position: right center;
+                background-repeat: no-repeat;
+                cursor: pointer
+            }
+
+            .calender-check-in-bg {
+                background-image: url(images/check-in-bg.png)
+            }
+
+            .calender-check-out-bg {
+                background-image: url(images/check-out-bg.png)
+            }
+
+            .footer-top {
+                background-color: #00b8f0;
+                border-top: 1px solid #dcdcdc;
+                padding: 30px 15px;
+                text-align: center
+            }
+
+            .footer-top a {
+                display: block
+            }
+            .footer-top a amp-img{
+                vertical-align: middle;
+            }
+
+            .footer-contents {
+                color: #999;
+                font-size: 14px;
+                margin-bottom: 10px;
+                line-height: 1.42857143;
+            }
+
+            .footer-contents a {
+                color: #337ab7;
+                text-decoration: none;
+            }
+
+            .footer-social-icons {
+                margin: 0 auto;
+                text-align: center;
+                padding: 18px 0
+            }
+
+            .footer-social-icons ul {
+                display: inherit;
+                text-decoration: none;
+                list-style: none;
+                margin: 0;
+                padding: 0
+            }
+
+            .footer-social-icons ul li {
+                list-style: none;
+                display: inline-block;
+                padding: 0 5px;
+                min-width: 25px;
+            }
+
+            .footer-social-icons ul li a {
+                display: inherit
+            }
+            .footer-social-icons ul li a amp-img{
+                vertical-align: middle;
+            }
+
+            .clear {
+                clear: both
+            }
+
+            .left-logo {
+                padding: 15px 0;
+                text-align: center;
+            }
+
+            .sidebar-menu ul {
+                padding: 0;
+                margin: 0
+            }
+
+            .sidebar-menu ul li {
+                list-style: none
+            }
+
+            .sidebar-menu-dropdown h4,
+            a.help-text {
+                padding: 0 16px;
+                line-height: 40px;
+                text-decoration: none;
+                font-weight: 300;
+                font-size: 16px;
+                color: #444;
+                outline: 0;
+                background: 0 0;
+                border: none;
+                display: block
+            }
+
+            ul.dropdown-items {
+                padding: 0 10px
+            }
+
+            ul.dropdown-items li {
+                list-style: none;
+                padding: 8px 0 8px 15px;
+                border-top: 1px solid #f0f0f0
+            }
+
+            ul.dropdown-items li a {
+                color: #999;
+                text-decoration: none;
+                font-size: 15px;
+                font-weight: 300
+            }
+
+            .searchbox {
+                margin: 12px 16px
+            }
+
+            .search-input {
+                font-size: 14px;
+                outline: 0;
+                height: 35px;
+                line-height: normal;
+                border: 1px solid #e4e4e4;
+                z-index: 1;
+                padding: 0 4%;
+                width: 92%;
+            }
+
+            .CalendarMonth_caption {
+                background-color: #4bbde8
+            }
+
+            .CalendarDay__selected,
+            .CalendarDay__selected:active,
+            .CalendarDay__selected:hover,
+            .CalendarDay__selected_start {
+                background-color: #17d8ff;
+                border: 1px solid #17d8ff
+            }
+
+            .DayPicker_transitionContainer {
+                min-height: 320px
+            }
+
+            .CalendarDay__selected_span {
+                background: #eb942d;
+                border: 1px solid #eb942d
+            }
+
+            .search-btn,
+            .search-cross {
+                background-image: url(images/sprites.png);
+                height: 35px
+            }
+
+            .hide {
+                display: none
+            }
+
+            .menu-wrapper {
+                background-color: #fff;
+                position: fixed;
+                left: 0;
+                top: 58px;
+                width: 100%;
+                z-index: 1;
+                border-top: 1px solid #e7e7e7;
+                padding-bottom: 12px
+            }
+
+            .search-btn {
+                width: 35px;
+                -webkit-appearance: none;
+                background-position: -64px -598px;
+                background-color: #ff4838;
+                border: 0;
+                margin: 0 6px;
+                padding: 0
+            }
+
+            .search-cross {
+                background-position: -118px -601px;
+                width: 27px
+            }
+
+            .down-arrow {
+                width: 14px;
+                height: 8px;
+                background: url(images/down-arrow.png) no-repeat;
+                background-size: 14px;
+                display: inline-block;
+                margin-left: 5px;
+                vertical-align: middle
+            }
+            /*-------------------*/
+            .hidden {
+                display: none;
+            }
+            .form .error-container {
+                position: absolute;
+                width: 100%;
+                bottom: -28px;
+                left: 0;
+                right: 0;
+            }
+            .form .errors {
+                text-align: center;
+                color: #fc3c3c;
+                font-size: 14px;
+                font-weight: bold;
+            }
+            .suggest{
+                position: relative;
+            }
+            .form .autosuggest-container, .header-autosuggestion {
+                position: absolute;
+                top: -5px;
+                left: 0;
+                right: 0;
+                width: 100%;
+                background: white;
+                text-align: center;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+                border-top: 1px solid #d0d0d0;
+                z-index: 1;
+            }
+            .form .autocomplete-box {
+                width: 100%;
+                color: #555;
+                text-align: center;
+            }
+            .form .select-option {
+                box-sizing: border-box;
+                height: 35px;
+                padding-left: 25px;
+                text-align: left;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin: 0px 0px 6px 0px;
+                border-top: 1px solid #d0d0d0;
+                padding: 5px 5px 5px 10px;
+                background-size: 15px;
+                vertical-align: middle;
+            }
+            .form .select-option:hover {
+                background: #d0d0d0;
+            }
+            .form .last-name input {
+                border-left: 0;
+            }
+            .form .select-option.empty {
+                text-align: center;
+            }
+            span.map-marker {
+                vertical-align: middle;
+            }
+            .form .google-logo {
+                background-image:  url('data:image/png;base64,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');
+                background-position: right;
+                background-repeat: no-repeat;
+                height: 18px;
+                margin-right: 6px;
+                margin-bottom: 2px;
+            }
+            @media screen and (min-width: 600px) {
+                .form .inputs {
+                    display: flex;
+                    justify-content: center;
+                    height: 50px;
+                }
+                .form .autosuggest-container {
+                    width: calc(100% - 160px);
+                }
+                .form .autocomplete-box {
+                    text-align: left;
+                }
+            }
+            @media screen and (max-width: 360px) {
+                .banner-form {
+                    padding: 0 10px;
+                }
+            }
+
+            .footer-top a{
+                padding: 10px 15px;
+            }
+        </style>
+        <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    </head>
+<body>
+    <header class="app-headerbar flex-container">
+        <div class="header-logo flex1">
+            <amp-img src="/static/images/bedroomvillas-logo.png" width="180" height="33" alt="bedroomvillas"></amp-img>
+            <h4 class="logo-tagline">Your exclusive luxury vacation site</h4>
+        </div>
+        <div tabindex="0" role="button" on="tap:AMP.setState({visible: !visible})" class="navbar-trigger">☰</div>
+    </header>
+    {% block content %}{% endblock %}
+    <footer>
+        <div class="footer-top">
+            <a href="https://www.rentbyowner.com/" target="_blank">
+                <amp-img src="/static/images/rbo.png" width="183" height="42" alt="rentbyowner"></amp-img>
+            </a>
+            <a href="https://www.selloffrentals.com/" target="_blank">
+                <amp-img src="/static/images/sor.png" width="183" height="32" alt="selloffrental"></amp-img>
+            </a>
+            <a href="https://www.rentalhomes.com/" target="_blank">
+                <amp-img src="/static/images/rh.png" width="183" height="32" alt="rentalhomes"></amp-img>
+            </a>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-contents">
+                Use of this website constitutes acceptance of the <a href="https://www.rentalhomes.com/">RentalHomes.com</a>
+                <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>.
+            </div>
+            <div class="footer-social-icons">
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/BedroomVillas/" target="_blank" rel="noopener">
+                            <amp-img src="/static/images/fb-icon.png" width="13" height="29" alt="facebook"></amp-img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/bedroomvillas" target="_blank" rel="noopener">
+                            <amp-img src="/static/images/twitter-icon.png" width="32" height="22" alt="twitter"></amp-img>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-contents">
+                Copyright 2018 <a href="/">Bedroomvillas.com</a>. All rights reserved.
+            </div>
+            <div class="left-logo">
+                <a href="http://lefttravel.com" target="_blank">
+                    <amp-img src="/static/images/left-logo.png" width="85" height="40" alt="left travel"></amp-img>
+                </a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </footer>
+</body>
+</html>
