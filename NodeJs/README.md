@@ -1,9 +1,10 @@
 # NodeJs
 
-- [ ] Node
-- [ ] Npm
-- [ ] yargs
-- [ ] Asynchronous programming
+- [x] Node
+- [x] Npm
+- [x] yargs
+- [x] Asynchronous programming
+- [ ] Create commandline notes application
 - [ ] Express
 - [ ] pug/hbs/ejs
 - [ ] MongoDB/Mongoose
@@ -13,4 +14,3 @@
 - [ ] Mocha
 - [ ] Creating a slack like application
 - [ ] And more!
-
