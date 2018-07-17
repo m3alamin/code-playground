@@ -18,11 +18,11 @@ function readNotes (fileName, callback) {
             });
         } else {
             // create the file
-            return writeNotes(fileName, [], (err, msg)=> {
+            return writeNotes(fileName, [], (err)=> {
                 if(err) {
                     return callback(err);
                 }
-                return callback(null, msg);
+                return callback(null, []);
             });
         }
     }).catch((e) => {
