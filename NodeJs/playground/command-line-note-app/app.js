@@ -8,7 +8,7 @@ var argv = yargs
     .alias('h', 'help')
     .alias('v', 'version')
     .usage('Usage: node $0 <command> [options]')
-    .example("ga asdf sdfsf ")
+    .example("Example of running the app")
     .describe('t', 'Put some title')
     .describe('d', 'Put some desc')
     .argv;
