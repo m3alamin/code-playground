@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-These instructions will lead to setup TeeTimes project.
+These instructions will lead to setup `Command line note app` project.
 
 ## Introduction ##
 
